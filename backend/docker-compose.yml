@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  gigachat_rag:
+    build: .
+    container_name: gigachat_rag_pdf
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    environment:
+      - CHROMA_PERSIST_DIR=/app/data/chroma_db
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - .:/app:rw
+      - chroma_data:/app/data/chroma_db
+    command: >
+      sh -c "
+        streamlit run frontend/app.py 
+        --server.address 0.0.0.0 
+        --server.port 8501 
+        --server.headless true
+      "
+    networks:
+      - rag-network
+
+networks:
+  rag-network:
+    driver: bridge
+
+volumes:
+  chroma_data:
+    name: gigachat_rag_chroma
