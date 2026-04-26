@@ -26,30 +26,6 @@
 - Docker — контейнеризация, воспроизводимая сборка, изоляция зависимостей
 - Pydantic + json.loads — парсинг структурированных ответов с фоллбэком на неструктурированный текст
 
-## Структура проекта
-pdf-consultant/
-├── backend/
-│   ├── config.py               # Конфигурация и env-переменные
-│   ├── gigachat/               # Клиенты и авторизация GigaChat
-│   │   ├── auth.py            # OAuth2-токен
-│   │   ├── clients.py         # REST-клиенты
-│   │   └── factory.py         # Выбор клиента
-│   ├── rag/                    # RAG-компоненты
-│   │   ├── embeddings.py      # EmbeddingsGigaR
-│   │   ├── llm_adapter.py     # Адаптер под LangChain
-│   │   ├── graph.py           # LangGraph pipeline
-│   │   └── vector_store.py    # ChromaDB
-│   └── utils/
-│       └── pdf_processor.py   # Парсинг и чанкинг PDF
-├── frontend/
-│   └── app.py                  # Streamlit UI
-├── .env                        # Переменные окружения
-├── .env.example                # Шаблон конфигурации
-├── requirements.txt            # Зависимости
-├── Dockerfile                  # Образ приложения
-├── docker-compose.yml          # Оркестрация
-└── demo.mp4                    # Видеодемонстрация
-
 ## Быстрый запуск
 
 ```bash
