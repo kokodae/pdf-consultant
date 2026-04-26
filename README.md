@@ -14,7 +14,7 @@
 - 
 ## Демонстрация
 
-![Демонстрация]([./demo.mp4](https://github.com/kokodae/pdf-consultant/blob/main/demo.mp4))
+![Демонстрация](https://github.com/kokodae/pdf-consultant/blob/main/demo.mp4)
 
 ## Стек
 
